@@ -1,0 +1,34 @@
+Challenge description:
+Time for you to master the basics! Get the flag from http://web.spro.ink:3000.
+
+Prerequisite skills:
+Editing HTML elements
+Editing cookies
+Editing requests
+==========================================
+After entering the website, we can see that the password is masked by *
+To remove the masks, we can use chrome's inspect element and replace type="password" to type="text"
+==========================================
+Username: john
+Password: i_can_manipulatd_html_elements
+
+There's a typo in the password
+==============================================
+Username: john
+Password: i_can_manipulate_html_elements
+==============================================
+Your privilege level: 1
+Perform action: Do nothing/ Print flag
+[Submit]
+
+Error: You need privilege level 0 to print the flag.
+=============================================
+Your requested action do nothing was executed successfully.
+Your privilege level: 0
+Perform action:  Do nothing/ Print Flag
+Submit
+=============================================
+Use editthiscookie add-on to change cookie value from 1 to 0
+
+Congratulations!
+flag{y0u_H4v3_m@5teR3d_t3h_ba5!cS}
