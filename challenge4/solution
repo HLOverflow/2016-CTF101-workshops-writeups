@@ -1,0 +1,47 @@
+Challenge description:
+Help! My Prof sets an impossible exam every year and I need your help to pass this year's! He mentioned that you can find references to past-year papers at http://web.spro.ink:3003. Not sure if they might help...
+
+Prerequisite skills:
+Ability to spot patterns/trends
+===========================================
+When we go to the web page, we see these with links to Previous papers.
+
+Final exam (AY16/17 S1)
+
+    Format: 1 open-ended question, same as in previous semesters
+    Previous papers: AY15/16 S2 (with solutions), AY15/16 S1 (with solutions)
+    Tip to pass exam:
+        Read my mind! (or get hold of this year's answer)
+=============================================
+We view the links
+=============================================
+http://web.spro.ink:3003/AY1516S2/exam.txt
+
+Q: What answer am I expecting?
+A: Sunrise sunset!
+
+http://web.spro.ink:3003/AY1516S1/exam.txt
+
+Q: What answer am I expecting?
+A: Zeeky bomb!
+===========================================
+After clicking link for AY15/16 S1 previous paper, we do see a pattern in the url. 
+However, changing the url to AY1617S1/exam.txt leads us to a 404 not found. It could be that the filename is not exam.txt
+
+We proceed to try removing exam.txt and realised that Directory listing is not disabled
+at http://web.spro.ink:3003/AY1617S1/
+
+===========================================
+Index of /AY1617S1
+
+Name			Last modified		Size	Description
+Parent Directory		 		-	 
+most_difficult_exam.txt	2016-08-17 13:15	79	 
+--------------------------------------------------
+Apache/2.4.7 (Ubuntu) Server at web.spro.ink Port 3003
+
+===========================================
+http://web.spro.ink:3003/AY1617S1/most_difficult_exam.txt
+
+Q: What answer am I expecting?
+A: flag{00ps_I_n3ver_th0ught_some1_wud_c_th15!}
