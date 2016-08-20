@@ -4,4 +4,3 @@ After attending an informative session of CTF101 conducted by the NUSGreyhats, I
 Disclaimer:
 These materials are not to be abused. If you do abuse them, do not hold anyone else except yourself responsible for your own action.
 
-trying out branch
