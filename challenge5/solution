@@ -1,0 +1,43 @@
+Challenge description:
+The Dark Army gave me a link to http://web.spro.ink:3004/home.php.. Any idea what's it for?
+
+Prerequisite skills:
+Ability to identify security misconfigurations
+
+========================================
+When accessing home.php, we can see that the url changed to this.
+http://web.spro.ink:3004/home.php?file=cabinets
+
+========================================
+We try to do another directory listing and it worked!
+
+========================================
+http://web.spro.ink:3004/
+
+Index of /
+
+Name			Last modified		Size	Description
+cabinets.php		2016-08-17 13:18	30	 
+cats.php		2016-08-17 13:18	29	 
+file_dominoes.gif	2016-08-17 13:18	2.3M	 
+home.php		2016-08-17 13:18	430	 
+steve.php		2016-08-17 13:18	29	 
+steve_carell.gif	2016-08-17 13:18	1.8M	 
+this_is_the_flag.php	2016-08-17 13:18	167	 
+tumbling_cat.gif	2016-08-17 13:18	1.4M	 
+---------------------------------------------------
+Apache/2.4.7 (Ubuntu) Server at web.spro.ink Port 3004
+
+=======================================
+We try to make a link from the name of php files and file parameter we had seen earlier (http://web.spro.ink:3004/home.php?file=cabinets)
+We realised that the file parameter just called the php file without its file extension.
+
+=======================================
+http://web.spro.ink:3004/home.php?file=this_is_the_flag
+
+Just for lulz:
+And there goes the filing cabinets...
+What's better than Steve Carell?
+Caattsssssss
+
+flag{1nclud3_m3_7h3_n3x7_71m3_w0uld_y0u?}
