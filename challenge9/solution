@@ -37,8 +37,8 @@ Explanation:
 - The first single quote terminate the string to be read by acting as a closing quote. Notice that the very last digit 1
 do not have a closing quote? That's because we are making use of the closing quote within the hidden SQL command.
 
-- UNION is used to exploit the fact we are aware of the hiding SELECT using 2 columns 
-so we can combine with our own SELECT statment with 2 other interesting columns.
+- UNION is used to exploit the fact we are aware of the hiden SELECT using 2 columns 
+so we can combine with our own SELECT statement with 2 other interesting columns.
 
 - where '1'='1' will always validate true so it will spew out all the table names and column names.
 =============================
