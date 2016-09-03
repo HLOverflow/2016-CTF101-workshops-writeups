@@ -1,6 +1,6 @@
 Challenge description:
 ==
-< oops! I lost the challenge descripting during editing... >
+< oops! I lost the challenge description during editing... >
 
 ---
 At the website, there is a login page and a search user page.
