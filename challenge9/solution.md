@@ -11,6 +11,7 @@ After trying common sql on the login page with no interesting response, we move 
 First observation @ http://web.spro.ink:3008/search.php
 
 Results:
+
 |Username|	Nickname
 |---|---|
 |admin	|	superuser
