@@ -16,6 +16,7 @@ When we go to http://web.spro.ink:3002/secret.php, we were redirected to index.p
 ```
 
 2. Go to http://web.spro.ink:3002/qr_code.jpg
+
 ![qrcode](https://github.com/HLOverflow/2016-CTF101-workshops-writeups/blob/master/challenge3/challenge3.jpg "qr code")
 
 3. Scan QR code with [online QR code scanner](https://webqr.com/)
