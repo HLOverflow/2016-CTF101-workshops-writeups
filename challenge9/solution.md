@@ -11,14 +11,14 @@ After trying common sql on the login page with no interesting response, we move 
 First observation @ http://web.spro.ink:3008/search.php
 
 Results:
-|Username|	Nickname|
+|Username|	Nickname
 |---|---|
-|admin	|	superuser|
-|xinan	|	the guy|
-|wenyan	|	the girl|
-|potato	|	the food|
-|sadhi	|	the friend|
-|john	|	the stranger|
+|admin	|	superuser
+|xinan	|	the guy
+|wenyan	|	the girl
+|potato	|	the food
+|sadhi	|	the friend
+|john	|	the stranger
 	
 ---
 Test for SQL vulnerability
