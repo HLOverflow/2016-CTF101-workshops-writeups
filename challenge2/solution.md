@@ -11,7 +11,7 @@ When we enter the webpage, we can see the Dlink product number, "DVA-G3810BN-TL"
 
 1. Google the DLink model number and you will find the [default credentials]( http://setuprouter.com/router/dlink/dva-g3810bn-tl/login.htm)
 
-    [!login page screenshot](https://github.com/HLOverflow/2016-CTF101-workshops-writeups/blob/master/challenge2/challenge2.jpg "login page")
+    ![login page screenshot](https://github.com/HLOverflow/2016-CTF101-workshops-writeups/blob/master/challenge2/challenge2.jpg "login page")
 
 ---
 Here's the flag:
